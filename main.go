@@ -3,12 +3,15 @@ package main
 import (
 	"flag"
 	"log"
+	"read-adviser-bot/clients/telegram"
+)
+
+const (
+	tgBotHost = "api.telegram.org" // in env, or flag
 )
 
 func main() {
-	token := mustToken()
-
-	//tgclient = telegram.New(token)
+	tgclient := telegram.New(tgBotHost, mustToken())
 	//fetcher = fetcher.New()
 	//processor = processor.New()
 
